@@ -1,5 +1,7 @@
 from fanstatic import Library, Resource
+from js.namespace import namespace
+from js.jquery import jquery
 
 library = Library('fanstatictools', 'resources')
 
-url = Resource(library, 'url.js')
+url = Resource(library, 'url.js', depends=[jquery, namespace])
