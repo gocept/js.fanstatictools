@@ -1,18 +1,13 @@
+(function($) {
 
+namespace.declare('fanstatictools');
 
-var isUndefinedOrNull = function(o) {
-    if (!(typeof(o) == 'undefined' || o === null)) {
-        return false;
-    }
-    return true;
-};
-
-var get_fanstatic_library_url = function(name) {
+fanstatictools.get_library_url = function(name) {
     // Return url to fanstatic library.
     var url;
     $('script').each(function(i, tag) {
         var src = $(tag).attr('src');
-        if (isUndefinedOrNull(src)) {
+        if (namespace.isUndefinedOrNull(src)) {
             return true;  //continue
         }
         src = src.split('/');
@@ -32,3 +27,5 @@ var get_fanstatic_library_url = function(name) {
     });
     return url + '/';
 };
+
+})(jQuery);
