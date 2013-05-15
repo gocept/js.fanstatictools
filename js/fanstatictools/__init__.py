@@ -4,4 +4,4 @@ from js.jquery import jquery
 
 library = Library('fanstatictools', 'resources')
 
-url = Resource(library, 'url.js', depends=[jquery, namespace])
+lib_url = Resource(library, 'url.js', depends=[jquery, namespace])
